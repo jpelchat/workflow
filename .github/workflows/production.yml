@@ -17,7 +17,11 @@ jobs:
       - name: Generate array of tracks
         run: |
           for dir in tracks/ ; do
-            cd tracks/$dir
-            ls -l
-            docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }} --workdir="/track" --mount type=bind,source="$(pwd)",target=/track instruqt/cli track validate
+            if [ -d "$dir" ]; then
+              cd tracks/$dir
+              pwd
+              ls -l
+              tree
+              docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }} --workdir="/track" --mount type=bind,source="$(pwd)",target=/track instruqt/cli track validate
+            fi
           done
