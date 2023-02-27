@@ -14,17 +14,5 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
-      - name: Generate array of tracks
-        run: |
-          set -euxo pipefail
-          ls -l
-          pwd
-          for dir in tracks/* ; do
-            if [ -d "$dir" ]; then
-              cd $dir
-              pwd
-              ls -l
-              tree
-              docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }} --workdir="/track" --mount type=bind,source="$(pwd)",target=/track instruqt/cli track validate
-            fi
-          done
+      - name: Validate tracks
+        run: chmod +x ./.github/scripts/production.sh; ./.github/scripts/production.sh
