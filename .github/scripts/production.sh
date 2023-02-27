@@ -8,16 +8,17 @@ for dir in tracks/* ; do
     fi
 done
 
-ls
+cd ~
 
 for dir in tracks/* ; do
     if [ -d "$dir" ]; then
-        ls
         cd $dir
         docker run -e INSTRUQT_TOKEN=$TOKEN --workdir="/track" --mount type=bind,source="$(pwd)",target=/track instruqt/cli track push --force
         cd ..
     fi
 done
+
+cd ~
 
 for dir in tracks/* ; do
     if [ -d "$dir" ]; then
