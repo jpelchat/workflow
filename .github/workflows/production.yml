@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Generate array of tracks
-        run: chmod +x ./.github/scripts/generate-slugs.sh; ./.github/scripts/generate-slugs.sh
+        run: chmod +x ./.github/scripts/production.sh; ./.github/scripts/production.sh
