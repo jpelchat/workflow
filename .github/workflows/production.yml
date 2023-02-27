@@ -18,7 +18,7 @@ jobs:
         run: |
           for dir in tracks/ ; do
             if [ -d "$dir" ]; then
-              cd tracks/$dir
+              cd dir
               pwd
               ls -l
               tree
