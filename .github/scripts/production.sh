@@ -9,6 +9,7 @@ for dir in tracks/* ; do
 done
 
 cd ~
+ls
 
 for dir in tracks/* ; do
     if [ -d "$dir" ]; then
