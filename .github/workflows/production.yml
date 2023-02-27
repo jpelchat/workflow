@@ -16,6 +16,9 @@ jobs:
 
       - name: Generate array of tracks
         run: |
+          set -euxo pipefail
+          ls -l
+          pwd
           for dir in tracks/ ; do
             if [ -d "$dir" ]; then
               cd dir
