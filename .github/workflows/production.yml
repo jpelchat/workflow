@@ -1,0 +1,18 @@
+name: Production Track Test
+
+env:
+  TOKEN: ${{ secrets.TOKEN }}
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  generate_slugs:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Generate array of tracks
+        run: chmod +x ./.github/scripts/generate-slugs.sh; ./.github/scripts/generate-slugs.sh
