@@ -1,7 +1,6 @@
 name: Production Track Test
 
-env:
-  TOKEN: ${{ secrets.TOKEN }}
+
 
 on: 
   workflow_dispatch:
@@ -16,3 +15,5 @@ jobs:
 
       - name: Validate tracks
         run: chmod +x ./.github/scripts/production.sh; ./.github/scripts/production.sh
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
