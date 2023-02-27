@@ -7,15 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  production_check:
-    runs-on: ubuntu-latest
-    steps:
+  production:
+  runs-on: ubuntu-latest
+  steps:
 
-      - name: Check out repository code
-        uses: actions/checkout@v3
+    - name: Check out repository code
+      uses: actions/checkout@v3
 
-      - name: Generate array of tracks
-        run: |
+    - name: Generate array of tracks
+      run: |
         for dir in tracks/ ; do
           cd $dir
           docker run -e INSTRUQT_TOKEN=${{ env.TOKEN }} --workdir="/track" --mount type=bind,source="$(pwd)",target=/track instruqt/cli track validate
