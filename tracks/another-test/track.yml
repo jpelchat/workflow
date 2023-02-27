@@ -1,0 +1,12 @@
+slug: another-test
+id: qqcxjx7rdb7h
+title: Another Test
+teaser: Get started quickly with a single container-based sandbox host
+description: Get started quickly with a container-based sandbox host. Choose a container
+  when you need a fast, lightweight Linux system.
+icon: https://cdn.instruqt.com/assets/templates/ubuntu.png
+tags: []
+owner: instruqt-support
+developers:
+- jacob@instruqt.com
+checksum: "7173351235467149721"
