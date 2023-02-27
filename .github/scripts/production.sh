@@ -8,8 +8,7 @@ for dir in tracks/* ; do
     fi
 done
 
-cd ~
-ls
+cd $GITHUB_WORKSPACE
 
 for dir in tracks/* ; do
     if [ -d "$dir" ]; then
@@ -19,7 +18,7 @@ for dir in tracks/* ; do
     fi
 done
 
-cd ~
+cd $GITHUB_WORKSPACE
 
 for dir in tracks/* ; do
     if [ -d "$dir" ]; then
