@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  generate_slugs:
+  production_check:
     runs-on: ubuntu-latest
     steps:
 
@@ -15,4 +15,8 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Generate array of tracks
-        run: chmod +x ./.github/scripts/production.sh; ./.github/scripts/production.sh
+        run: |
+        for dir in tracks/ ; do
+          cd $dir
+          docker run -e INSTRUQT_TOKEN=${{ env.TOKEN }} --workdir="/track" --mount type=bind,source="$(pwd)",target=/track instruqt/cli track validate
+        done
