@@ -5,6 +5,7 @@ for dir in tracks/* ; do
         cd $dir
         ls
         echo $dir IS BEING VALIDATED.
+        cd ..
     fi
 done
 
